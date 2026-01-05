@@ -37,10 +37,11 @@ const BoardPage = () => {
 
         const loadData = () => {
             try {
-                const savedName = localStorage.getItem(`board_name_${boardId}`);
-                const savedGroups = localStorage.getItem(`board_groups_${boardId}`);
-                const savedColumns = localStorage.getItem(`board_columns_${boardId}`);
-                const savedStatus = localStorage.getItem(`board_status_${boardId}`);
+                // Use v3 prefix to invalidate old cache and force re-sync with new template columns
+                const savedName = localStorage.getItem(`board_v3_name_${boardId}`);
+                const savedGroups = localStorage.getItem(`board_v3_groups_${boardId}`);
+                const savedColumns = localStorage.getItem(`board_v3_columns_${boardId}`);
+                const savedStatus = localStorage.getItem(`board_v3_status_${boardId}`);
 
                 if (savedName && savedGroups && savedColumns) {
                     const parsedName = JSON.parse(savedName);
@@ -108,10 +109,10 @@ const BoardPage = () => {
     useEffect(() => {
         if (!loading && boardId) {
             try {
-                localStorage.setItem(`board_name_${boardId}`, JSON.stringify(boardName));
-                localStorage.setItem(`board_groups_${boardId}`, JSON.stringify(groups));
-                localStorage.setItem(`board_columns_${boardId}`, JSON.stringify(boardColumns));
-                localStorage.setItem(`board_status_${boardId}`, JSON.stringify(statusConfig));
+                localStorage.setItem(`board_v3_name_${boardId}`, JSON.stringify(boardName));
+                localStorage.setItem(`board_v3_groups_${boardId}`, JSON.stringify(groups));
+                localStorage.setItem(`board_v3_columns_${boardId}`, JSON.stringify(boardColumns));
+                localStorage.setItem(`board_v3_status_${boardId}`, JSON.stringify(statusConfig));
             } catch (error) {
                 console.error("Failed to save to local storage", error);
             }
@@ -371,4 +372,3 @@ const BoardPage = () => {
     );
 };
 
-export default BoardPage;
