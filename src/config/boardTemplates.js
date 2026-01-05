@@ -204,7 +204,7 @@ export const boardTemplates = {
                     {
                         id: 'vol6',
                         name: 'James Wilson',
-                        volunteerManager: { name: 'Sarah Chen', initial: 'SC', color: '#A25DDC' },
+                        volunteerManager: { name: 'Erick Joier', initial: 'SC', color: '#A25DDC' },
                         status: 'new',
                         email: 'james.w@example.com',
                         phone: '555-0206',
@@ -264,7 +264,7 @@ export const boardTemplates = {
                     {
                         id: 'vol9',
                         name: 'Ava Thomas',
-                        volunteerManager: { name: 'Sarah Chen', initial: 'SC', color: '#A25DDC' },
+                        volunteerManager: { name: 'Erick Joier', initial: 'SC', color: '#A25DDC' },
                         status: 'active',
                         email: 'ava.t@example.com',
                         phone: '555-0302',
@@ -298,7 +298,7 @@ export const boardTemplates = {
                     {
                         id: 'vol11',
                         name: 'Lucas Harris',
-                        volunteerManager: { name: 'Sarah Chen', initial: 'SC', color: '#A25DDC' },
+                        volunteerManager: { name: 'Erick Joier', initial: 'SC', color: '#A25DDC' },
                         status: 'past',
                         email: 'lucas.h@example.com',
                         phone: '555-0401',
@@ -500,7 +500,7 @@ export const boardTemplates = {
                     {
                         id: 'p1',
                         name: 'Website Redesign',
-                        owner: { name: 'Sarah Chen', initial: 'SC', color: '#00C875' },
+                        owner: { name: 'Erick Joier', initial: 'SC', color: '#00C875' },
                         client: 'Tech Corp',
                         timeline: 'Jan 1 - Mar 30',
                         analysis: 'done',
@@ -544,7 +544,7 @@ export const boardTemplates = {
                     {
                         id: 'p6',
                         name: 'Sales Training Workshop',
-                        owner: { name: 'Sarah Chen', initial: 'SC', color: '#00C875' },
+                        owner: { name: 'Erick Joier', initial: 'SC', color: '#00C875' },
                         client: 'Internal',
                         timeline: 'Mar 15 - Mar 17',
                         analysis: 'done',
