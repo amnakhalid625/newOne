@@ -48,11 +48,13 @@ const BoardPage = () => {
                     const parsedGroups = JSON.parse(savedGroups);
                     const template = boardTemplates[boardId];
 
-                    // FIX: Check if localStorage has "broken" empty state (Untitled Board + No Groups)
+                    // FIX: Check if localStorage has "broken" empty state (Untitled Board + No Groups/Columns)
                     // This handles the case where the user visited the live page before the template data was deployed.
-                    const isGenericFallback = parsedName === 'Untitled Board' && parsedGroups.length === 0;
+                    const isGenericFallback = (parsedName === 'Untitled Board' || parsedName === 'Loading...') &&
+                        (parsedGroups.length === 0 || parsedColumns.length === 0);
 
                     if (isGenericFallback && template) {
+                        console.log("Resetting board data from template due to broken/empty state");
                         setBoardName(template.title);
                         setGroups(template.groups || []);
                         setBoardColumns(template.columns || []);
