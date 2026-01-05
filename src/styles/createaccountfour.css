@@ -1,0 +1,227 @@
+/* Container */
+.account-forth-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    font-family: var(--font-poppins), 'Roboto', 'Noto Sans Hebrew', 'Noto Kufi Arabic', 'Noto Sans JP', sans-serif;
+    background-color: #ffffff;
+}
+
+/* Left Section */
+.account-forth-left {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow-y: hidden;
+    min-width: 535px;
+}
+
+/* Content Wrapper */
+.account-forth-content-wrapper {
+    height: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    justify-content: center;
+    padding: 88px 100px;
+}
+
+/* Logo Container */
+.account-forth-logo-container {
+    margin-bottom: 40px;
+}
+
+.account-forth-logo {
+    height: 24px;
+    display: block;
+    cursor: pointer;
+}
+
+/* Form Container */
+.account-forth-form-container {
+    flex: 1;
+    max-width: 660px;
+    min-width: 300px;
+    min-height: 0;
+}
+
+/* Section */
+.account-forth-section {
+    margin-bottom: 48px;
+}
+
+/* Title */
+.account-forth-title {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 500;
+    color: #323338;
+    margin-bottom: 16px;
+    margin-top: 0;
+    font-family: var(--font-poppins), 'Roboto', 'Noto Sans Hebrew', 'Noto Kufi Arabic', 'Noto Sans JP', sans-serif;
+    letter-spacing: -0.1px;
+    display: block;
+    height: 30px;
+    overflow: hidden;
+    text-align: start;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Options Wrapper */
+.account-forth-options-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 8px;
+    padding-top: 16px;
+    align-items: center;
+}
+
+/* Option Button */
+.account-forth-option-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #323338;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0.8px solid rgb(195, 198, 212);
+    border-radius: 32px;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.07s ease, background-color 0.2s ease;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
+    user-select: none;
+}
+
+.account-forth-option-button:hover {
+    background-color: rgba(103, 104, 121, 0.1);
+}
+
+.account-forth-option-button.selected {
+    border: 0.8px solid rgb(0, 115, 234);
+    box-shadow: rgb(0, 115, 234) 0px 0px 0px 1px inset;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.account-forth-option-button.selected:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* Footer */
+.account-forth-footer {
+    padding: 24px 100px 88px 100px;
+    display: block;
+}
+
+.account-forth-button-group {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Buttons */
+.account-forth-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 40px;
+    transition: transform 0.07s ease;
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.account-forth-back-button {
+    color: #323338;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0.8px solid rgb(195, 198, 212);
+}
+
+.account-forth-continue-button {
+    color: #ffffff;
+    background-color: #0073ea;
+    border: none;
+}
+
+.account-forth-continue-button:disabled {
+    color: rgba(50, 51, 56, 0.38);
+    background-color: #ecedf5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Right Section */
+.account-forth-right {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+}
+
+.account-forth-right-inner {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(97, 97, 255);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.account-forth-right-image {
+    display: block;
+    height: 100%;
+    width: auto;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .account-forth-left {
+        min-width: 400px;
+    }
+
+    .account-forth-content-wrapper {
+        padding: 60px 60px;
+    }
+
+    .account-forth-footer {
+        padding: 24px 60px 60px 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .account-forth-container {
+        flex-direction: column;
+    }
+
+    .account-forth-right {
+        display: none;
+    }
+
+    .account-forth-left {
+        min-width: 100%;
+    }
+}

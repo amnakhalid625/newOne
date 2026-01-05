@@ -1,0 +1,227 @@
+/* Container */
+.create-account-container {
+    display: flex;
+    height: 100vh;
+    font-family: var(--font-poppins), 'Roboto', 'Noto Sans Hebrew', 'Noto Kufi Arabic', 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+}
+
+/* Left Section */
+.create-account-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 768px;
+    min-width: 535px;
+    overflow-y: hidden;
+}
+
+/* Content Wrapper */
+.create-account-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 88px 100px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* Logo */
+.create-account-logo-container {
+    display: block;
+    margin-bottom: 48px;
+}
+
+.create-account-logo-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.create-account-logo {
+    height: 24px;
+}
+
+/* Title */
+.create-account-title {
+    font-family: var(--font-poppins), 'Roboto', 'Noto Sans Hebrew', 'Noto Kufi Arabic', 'Noto Sans JP', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: -0.1px;
+    color: #323338;
+    text-align: start;
+    margin: 0 0 16px 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Form Container */
+.create-account-form-container {
+    flex-basis: 0%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 660px;
+    min-width: 300px;
+}
+
+/* Input Group */
+.create-account-input-group {
+    margin-bottom: 24px;
+}
+
+.create-account-input-group:last-child {
+    margin-bottom: 0;
+}
+
+/* Label */
+.create-account-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #323338;
+    margin-bottom: 8px;
+}
+
+/* Input Wrapper */
+.create-account-input-wrapper {
+    position: relative;
+}
+
+/* Input */
+.create-account-input {
+    width: 100%;
+    height: 40px;
+    padding: 8px 16px;
+    border: 0.8px solid #c3c6d4;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #323338;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.1s ease-in;
+    box-sizing: border-box;
+}
+
+.create-account-input:focus {
+    border-color: #0073ea;
+}
+
+.create-account-input.error {
+    border: 1px solid #d83a52;
+}
+
+.create-account-input.error:focus {
+    border-color: #d83a52;
+}
+
+/* Error Message */
+.create-account-error-message {
+    font-size: 14px;
+    color: #d83a52;
+    margin-top: 4px;
+}
+
+/* Footer */
+.create-account-footer {
+    padding: 24px 100px 88px;
+    display: block;
+}
+
+/* Button Group */
+.create-account-button-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Buttons */
+.create-account-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    cursor: pointer;
+    transition: transform 0.07s ease;
+    user-select: none;
+    white-space: nowrap;
+    outline: none;
+}
+
+/* Back Button */
+.create-account-back-button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0.8px solid #c3c6d4;
+    color: #323338;
+    visibility: visible;
+}
+
+.create-account-back-button:hover {
+    background-color: #f6f7fb;
+}
+
+/* Continue Button */
+.create-account-continue-button {
+    background-color: #0073ea;
+    border: none;
+    color: #ffffff;
+    opacity: 1;
+}
+
+.create-account-continue-button:hover {
+    background-color: #0060b9;
+}
+
+.create-account-continue-button:disabled {
+    background-color: rgba(0, 115, 234, 0.38);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.create-account-continue-button:disabled:hover {
+    background-color: rgba(0, 115, 234, 0.38);
+}
+
+/* Button Icons */
+.create-account-button-icon {
+    margin-right: 4px;
+}
+
+.create-account-button-icon-right {
+    margin-left: 4px;
+}
+
+/* Right Section */
+.create-account-right {
+    flex-basis: 0%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.create-account-right-inner {
+    display: flex;
+    height: 100vh;
+}
+
+.create-account-right-content {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(97, 97, 255);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+.create-account-right-image {
+    display: block;
+    height: 100%;
+    width: auto;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}

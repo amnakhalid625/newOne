@@ -1,0 +1,28 @@
+
+> monday-clone-nextjs@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.1.1 (Turbopack)
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 1 errors:
+./src/app/layout.jsx:3:1
+Module not found: Can't resolve '@/components/layout/Navbar'
+  1 | import { Poppins } from "next/font/google";
+  2 | import "./globals.css";
+> 3 | import Navbar from "@/components/layout/Navbar";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const poppins = Poppins({
+  6 |     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+
+Import map: aliased to relative './components/layout/Navbar' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (./src/app/layout.jsx:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)

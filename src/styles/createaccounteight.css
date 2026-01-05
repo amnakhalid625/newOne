@@ -1,0 +1,454 @@
+/* Main Container */
+.account-eight-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    font-family: var(--font-poppins), Roboto, Noto Sans Hebrew, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* Toast Notification */
+.toast-notification {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    min-width: 320px;
+    max-width: 480px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 9999;
+    border-left: 4px solid;
+}
+
+.toast-notification.success {
+    border-left-color: #00ca72;
+}
+
+.toast-notification.error {
+    border-left-color: #e44258;
+}
+
+.toast-notification.warning {
+    border-left-color: #fdab3d;
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.toast-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.toast-notification.success .toast-icon {
+    color: #00ca72;
+}
+
+.toast-notification.error .toast-icon {
+    color: #e44258;
+}
+
+.toast-notification.warning .toast-icon {
+    color: #fdab3d;
+}
+
+.toast-message {
+    font-size: 14px;
+    line-height: 20px;
+    color: #323338;
+    margin: 0;
+    font-weight: 400;
+}
+
+.toast-close {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #676879;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+    flex-shrink: 0;
+    margin-left: 8px;
+}
+
+.toast-close:hover {
+    background-color: #f5f6f8;
+}
+
+/* Left Section */
+.account-eight-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 48px 80px;
+    position: relative;
+    overflow: hidden;
+    min-width: 535px;
+}
+
+/* Close Button */
+.account-eight-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: #676879;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Content Wrapper */
+.account-eight-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 630px;
+}
+
+/* Header */
+.account-eight-header {
+    margin-bottom: 40px;
+}
+
+.account-eight-logo {
+    height: 24px;
+    display: block;
+    margin-bottom: 32px;
+    cursor: pointer;
+}
+
+.account-eight-title {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 400;
+    color: #323338;
+    margin: 0 0 16px 0;
+    font-family: var(--font-poppins), Roboto, Noto Sans Hebrew, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+    letter-spacing: -0.2px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.account-eight-url {
+    font-size: 14px;
+    line-height: 20px;
+    color: #676879;
+    margin: 0;
+}
+
+.account-eight-url-highlight {
+    font-weight: 600;
+    color: #0073ea;
+}
+
+.account-eight-warning {
+    font-size: 14px;
+    line-height: 20px;
+    color: #e44258;
+    margin: 0;
+}
+
+/* Invites Section */
+.account-eight-invites {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.account-eight-invite-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Email Input */
+.account-eight-email-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #c3c6d4;
+    border-radius: 4px 0 0 4px;
+    height: 48px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.account-eight-email-wrapper:focus-within {
+    border-color: #0073ea;
+    box-shadow: 0 0 0 1px #0073ea;
+}
+
+.account-eight-email-input {
+    flex: 1;
+    height: 100%;
+    padding: 0 16px;
+    font-size: 15px;
+    line-height: 22px;
+    color: #323338;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    font-family: inherit;
+}
+
+.account-eight-email-input::placeholder {
+    color: #c3c6d4;
+
+}
+
+/* Role Dropdown */
+.account-eight-role-wrapper {
+    width: 128px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #c3c6d4;
+    border-radius: 4px;
+    padding: 0 12px;
+    position: relative;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+}
+
+.account-eight-role-wrapper:hover {
+    border-color: #9399a8;
+}
+
+.account-eight-role-wrapper:focus-within {
+    border-color: #0073ea;
+    box-shadow: 0 0 0 1px #0073ea;
+}
+
+.account-eight-role-select {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    line-height: 22px;
+    color: #323338;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    padding-right: 28px;
+    padding-left: 4px;
+    font-family: inherit;
+    font-weight: 400;
+}
+
+.account-eight-role-select option {
+    font-size: 15px;
+    line-height: 22px;
+    color: #323338;
+    background-color: #ffffff;
+    padding: 8px 12px;
+}
+
+.account-eight-dropdown-icon {
+    position: absolute;
+    right: 10px;
+    color: #676879;
+    pointer-events: none;
+    transition: color 0.15s ease;
+}
+
+.account-eight-role-wrapper:hover .account-eight-dropdown-icon {
+    color: #323338;
+}
+
+/* Remove Button */
+.account-eight-remove-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #676879;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.account-eight-remove-spacer {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+/* Add Another Button */
+.account-eight-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    margin-top: 8px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #0073ea;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    align-self: flex-start;
+}
+
+/* Footer */
+.account-eight-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 32px;
+    max-width: 630px;
+}
+
+/* Remind Button */
+.account-eight-remind-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #323338;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.account-eight-remind-btn:hover {
+    background-color: #f5f6f8;
+}
+
+.account-eight-remind-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Invite Button */
+.account-eight-invite-btn {
+    padding: 12px 32px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #0073ea;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.account-eight-invite-btn:hover:not(:disabled) {
+    background-color: #0060b9;
+}
+
+.account-eight-invite-btn:disabled {
+    background-color: #e6e9ef;
+    color: #c3c6d4;
+    cursor: not-allowed;
+}
+
+/* Right Section */
+.account-eight-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 202, 114);
+    overflow: hidden;
+    padding: 40px;
+}
+
+.account-eight-right-image {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .account-eight-left {
+        padding: 32px 40px;
+    }
+
+    .account-eight-title {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .account-eight-right {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .account-eight-left {
+        min-width: 100%;
+        padding: 24px;
+    }
+
+    .account-eight-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .account-eight-invite-row {
+        flex-wrap: wrap;
+    }
+
+    .account-eight-email-wrapper {
+        border-radius: 4px;
+        border-right: 1px solid #c3c6d4;
+    }
+
+    .account-eight-role-wrapper {
+        width: 100%;
+        border-radius: 4px;
+        border-left: 1px solid #c3c6d4;
+        margin-top: 8px;
+    }
+
+    .toast-notification {
+        min-width: 280px;
+        right: 16px;
+        top: 16px;
+    }
+}

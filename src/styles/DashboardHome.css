@@ -1,0 +1,774 @@
+/* ========================================
+   DASHBOARD HOME - Monday.com Exact Style (Updated for Exact Match)
+   ======================================== */
+
+
+/* Main Container */
+.dashboard-home {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: var(--font-poppins), 'Roboto', 'Noto Sans Hebrew', sans-serif;
+  background: transparent;
+  align-items: start;
+  min-height: 100%;
+}
+
+/* ===== LEFT PANEL (Main Content) ===== */
+.main-panel-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+}
+
+/* ===== RIGHT PANEL ===== */
+.right-panel-container {
+  width: 300px;
+  /* Exact match from dump */
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-self: start;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+.dashboard-loading {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  border: 4px solid #e6e9ef;
+  border-top-color: #007F9B;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   SECTION CONTAINER
+   ======================================== */
+.section-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(230, 233, 239, 1);
+  padding: 20px;
+  position: relative;
+}
+
+
+/* ========================================
+   UPDATE FEED SECTION (NEW)
+   ======================================== */
+.update-feed-section {
+  box-shadow: none;
+  /* border: 0.8px solid rgb(208, 212, 228); */
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.update-feed-section .collapsible-header {
+  padding: 20px;
+  margin-bottom: 0;
+}
+
+.update-feed-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.empty-animation {
+  width: 320px;
+  height: 320px;
+  margin-bottom: 0;
+}
+
+.empty-feed-title {
+  font-size: 15px;
+  font-weight: 400;
+  color: #323338;
+  margin: 0 0 4px 0;
+  line-height: 22.5px;
+}
+
+.empty-feed-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: #323338;
+  margin: 0;
+  line-height: 22.5px;
+  max-width: 600px;
+}
+
+/* ========================================
+   COLLAPSIBLE SECTIONS
+   ======================================== */
+.collapsible-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.collapsible-header {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.collapse-toggle {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #323338;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.collapse-toggle:hover {
+  background: #f5f6f8;
+  border-radius: 4px;
+}
+
+.collapsed .collapse-toggle svg {
+  transform: rotate(-90deg);
+}
+
+.collapsed-icon {
+  color: #323338;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #323338;
+  margin: 0;
+  flex: 1;
+}
+
+.counter-badge {
+  margin-left: auto;
+  background: #e6e9ef;
+  color: #323338;
+  border-radius: 12px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 24px;
+  text-align: center;
+}
+
+.collapsible-content {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+.collapsed .collapsible-content {
+  display: none;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   EMPTY STATE
+   ======================================== */
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.empty-icon {
+  margin: 0 auto 24px;
+  width: 64px;
+  height: 64px;
+  color: #c5c7d0;
+}
+
+.empty-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #323338;
+  margin: 0 0 12px 0;
+}
+
+.empty-description {
+  font-size: 16px;
+  color: #676879;
+  margin: 0 0 32px 0;
+  line-height: 1.5;
+}
+
+.primary-button {
+  padding: 12px 24px;
+  background: #007F9B;
+  color: white;
+  border: #007F9B;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primary-button:hover {
+  background: #007F9B;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px #007F9B;
+}
+
+/* ========================================
+   CARDS GRID
+   ======================================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.board-card-item {
+  background: white;
+  border: 0.4px solid rgb(208, 212, 228);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.board-card-item:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transform: translateY(-2px);
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 120px;
+  background: #f5f6f8;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content-wrapper {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.card-info-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.board-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: #323338;
+}
+
+.card-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #323338;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.favorite-button {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #676879;
+  transition: all 0.15s ease;
+  border-radius: 4px;
+  margin-left: auto;
+}
+
+.favorite-button:hover {
+  background: #f5f6f8;
+  color: #323338;
+}
+
+.card-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.product-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.workspace-text {
+  font-size: 12px;
+  color: #676879;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.show-more-wrapper {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.show-more-button {
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  color: #323338;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.show-more-button:hover {
+  background: #f5f6f8;
+  transition: all 0.15s ease;
+  border-radius: 4px;
+}
+
+/* ========================================
+   RIGHT PANEL - BANNER CARD (Exact Match from Dump)
+   ======================================== */
+.banner-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(230, 233, 239, 1);
+  margin-bottom: 16px;
+}
+
+.banner-image-section {
+  width: 100%;
+  height: 138px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007F9B;
+  border-radius: 8px;
+}
+
+.banner-image {
+  height: 138px;
+  width: auto;
+  padding: 0 4px;
+  display: block;
+}
+
+.banner-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.banner-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: #323338;
+  line-height: 24px;
+  height: 48px;
+  margin-bottom: 12px;
+}
+
+.banner-button {
+  align-self: flex-start;
+  padding: 8px 16px;
+  background: transparent;
+  border: 0.8px solid rgb(195, 198, 212);
+  /* Exact from dump */
+  border-radius: 4px;
+  color: #323338;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.banner-button:hover {
+  background: #f5f6f8;
+  border-color: #007F9B;
+  color: #007F9B;
+}
+
+/* ========================================
+   RIGHT PANEL - LEARN SECTION (Exact Match from Dump)
+   ======================================== */
+.right-panel-container {
+  width: 300px;
+  /* Exact from dump */
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-self: start;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   BANNER CARD (Exact Match)
+   ======================================== */
+.banner-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(230, 233, 239, 1);
+  position: relative;
+  display: inline-block;
+  width: 300px;
+}
+
+.banner-image-section {
+  width: 100%;
+  height: 138px;
+  background-color: #007F9B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  /* Only top corners */
+}
+
+.banner-image {
+  height: 138px;
+  width: auto;
+  padding: 0 4px;
+}
+
+.banner-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.banner-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #323338;
+  line-height: 24px;
+}
+
+.banner-button {
+  align-self: flex-start;
+  padding: 8px 14px;
+  background: transparent;
+  border: 0.8px solid rgb(195, 198, 212);
+  border-radius: 4px;
+  color: #333832;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  width: 100%;
+  /* Matches dump width 276px inside 300px container */
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.banner-button:hover {
+  background: #f5f6f8;
+}
+
+/* ========================================
+   LEARN SECTION (Exact Match)
+   ======================================== */
+.learn-section {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(230, 233, 239, 1);
+  width: 300px;
+  position: relative;
+  display: inline-block;
+}
+
+.learn-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #323338;
+  margin: 24px 16px 0 16px;
+  /* Exact: top 24px, sides 16px */
+  line-height: 17.6px;
+  display: block;
+}
+
+.navigation-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  margin: 16px 16px 0 16px;
+  /* Exact spacing */
+  width: calc(100% - 32px);
+  /* 300 - 32px padding */
+}
+
+.navigation-item:hover {
+  background: #f5f6f8;
+}
+
+.nav-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nav-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.nav-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #323338;
+  margin: 0;
+  line-height: 15.4px;
+}
+
+.nav-description {
+  font-size: 14px;
+  font-weight: 400;
+  color: #323338;
+  margin: 0;
+  line-height: 14px;
+}
+
+/* Ensure no extra padding/margin on section-component */
+.section-component.no-padding {
+  padding: 0 !important;
+}
+
+/* ========================================
+   RESPONSIVE (Keep existing)
+   ======================================== */
+@media (max-width: 1024px) {
+  .right-panel-container {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  .banner-card,
+  .learn-section {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .navigation-item {
+    margin: 16px;
+    width: calc(100% - 32px);
+  }
+}
+
+.navigation-item:hover {
+  background: #f5f6f8;
+}
+
+.nav-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nav-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: inline;
+  /* Match dump */
+}
+
+.nav-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  line-height: 21px;
+  /* From content dump */
+}
+
+.nav-title {
+  font-size: 14px;
+  font-weight: 700;
+  /* Exact bold */
+  color: #323338;
+  margin: 0;
+  line-height: 15.4px;
+  /* Exact from dump */
+}
+
+.nav-description {
+  font-size: 14px;
+  font-weight: 400;
+  color: #323338;
+  /* No opacity, exact color */
+  margin: 0;
+  line-height: 14px;
+  /* Exact from dump */
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+/* ========================================
+   RESPONSIVE DESIGN -- SCALING (ZOOM EFFECT)
+   ======================================== */
+
+@media (max-width: 1400px) {
+  .dashboard-home {
+    /* Slight scale down */
+    zoom: 0.95;
+  }
+}
+
+@media (max-width: 1200px) {
+  .dashboard-home {
+    /* More scaling */
+    zoom: 0.85;
+
+    /* Keep the grid rigid */
+    grid-template-columns: 1fr 300px;
+    min-width: 1000px;
+    /* Force scrollbar */
+    gap: 16px;
+  }
+
+  /* Right panel stays rigid but scaled via zoom */
+  .right-panel-container {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard-home {
+    /* Significant scaling */
+    zoom: 0.75;
+
+    grid-template-columns: 1fr 300px;
+    min-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-home {
+    /* Mobile scaling */
+    zoom: 0.65;
+
+    grid-template-columns: 1fr 300px;
+    min-width: 800px;
+    /* Ensures user can scroll to see right panel */
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
