@@ -31,13 +31,12 @@ const BoardPage = () => {
     const [statusConfig, setStatusConfig] = useState({});
     const [addItemText, setAddItemText] = useState('+ Add item');
 
-    // Initialize Data - Runs only on client to avoid hydration mismatch
+    // Initialize Data
     useEffect(() => {
         if (!boardId) return;
 
         const loadData = () => {
             try {
-                // Try localStorage first
                 const savedName = localStorage.getItem(`board_name_${boardId}`);
                 const savedGroups = localStorage.getItem(`board_groups_${boardId}`);
                 const savedColumns = localStorage.getItem(`board_columns_${boardId}`);
@@ -46,15 +45,13 @@ const BoardPage = () => {
                 if (savedName && savedGroups && savedColumns) {
                     const parsedName = JSON.parse(savedName);
                     const parsedGroups = JSON.parse(savedGroups);
+                    let parsedCols = JSON.parse(savedColumns);
                     const template = boardTemplates[boardId];
 
-                    // FIX: Check if localStorage has "broken" empty state (Untitled Board + No Groups/Columns)
-                    // This handles the case where the user visited the live page before the template data was deployed.
-                    const isGenericFallback = (parsedName === 'Untitled Board' || parsedName === 'Loading...') &&
-                        (parsedGroups.length === 0 || parsedColumns.length === 0);
+                    // FIX: Check for "broken" empty state
+                    const isGenericFallback = parsedName === 'Untitled Board' && parsedGroups.length === 0;
 
                     if (isGenericFallback && template) {
-                        console.log("Resetting board data from template due to broken/empty state");
                         setBoardName(template.title);
                         setGroups(template.groups || []);
                         setBoardColumns(template.columns || []);
@@ -63,7 +60,15 @@ const BoardPage = () => {
                     } else {
                         setBoardName(parsedName);
                         setGroups(parsedGroups);
-                        setBoardColumns(JSON.parse(savedColumns));
+
+                        // FIX: Ensure 'name' column always exists (recover from bad cache)
+                        if (!parsedCols.some(c => c.id === 'name')) {
+                            const nameCol = template?.columns?.find(c => c.id === 'name') ||
+                                { id: 'name', title: 'Item', type: 'text', width: 250, editable: true };
+                            parsedCols = [nameCol, ...parsedCols];
+                        }
+
+                        setBoardColumns(parsedCols);
                         setStatusConfig(savedStatus ? JSON.parse(savedStatus) : {});
 
                         if (template) {
